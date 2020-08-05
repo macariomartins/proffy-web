@@ -8,10 +8,11 @@ import './styles.css';
 
 interface PageHeaderProps {
   title: string;
+  description?: string;
   children?: any;
 }
 
-const PageHeader = ({ title, children }: PageHeaderProps) => (
+const PageHeader = ({ title, description, children }: PageHeaderProps) => (
   <header className="page-header">
     <div className="top-bar-container">
       <Link to="/">
@@ -23,6 +24,7 @@ const PageHeader = ({ title, children }: PageHeaderProps) => (
 
     <div className="header-content">
       <strong>{title}</strong>
+      {description && <p>{description}</p>}
       {children}
     </div>
   </header>
