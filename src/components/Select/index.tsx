@@ -15,8 +15,8 @@ const Select = ({ name, label, options, ...props }: SelectProps) => {
   return (
     <div className="select-block">
       <label htmlFor={name}>{label}</label>
-      <select id={name} {...props}>
-        <option value="" disabled selected hidden>Selecione uma opção</option>
+      <select defaultValue="" id={name} {...props}>
+        <option value="" disabled hidden>Selecione uma opção</option>
         {options.map((option) => (<option key={option.value} value={option.value}>{option.label}</option>))}
       </select>
     </div>
